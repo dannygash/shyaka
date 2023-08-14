@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal website</title>
+    <link rel="stylesheet" href="project.css">
+    <script src="https://kit.fontawesome.com/6bf1ed113f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h3 id="name">GASANA</h3>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="bio.html">Bio</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="elevator.html">Elevator pitch</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm Shyaka Daniel Gasana </h1><br>
+ <p>I am a Data Scientist by Day, 📸 Photographer by Passion</p>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+git clone https://github.com/dannygash/shyaka.git
+
+
+
+
+        <div class="copyright">
+            <p>Copyright @danny's cc.</p>
+        </div>
+    </div>
+    
+    <script>
+
+        var sidemenu = document.getElementById('sidemenu');
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+                    }
+
+
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz1FtZqsOIQIIGYllQjcLd28DOQLCpH2gu4OBN-Pyxtl_5jQOwEYw0wCq3_BBqAgJesDw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        } )
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
